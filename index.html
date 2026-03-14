@@ -1,27 +1,168 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Counter</title>
-    <link rel="stylesheet" href="style.css">
+<title>Student Form</title>
+
+<style>
+
+body{
+font-family: Arial;
+text-align:center;
+}
+
+h1{
+margin-top:40px;
+}
+
+/* Form Box */
+
+.form-box{
+display:inline-block;
+border:2px solid gray;
+padding:15px;
+margin-top:20px;
+}
+
+.form-box table{
+border-collapse:collapse;
+}
+
+.form-box td{
+border:1px solid gray;
+padding:8px;
+}
+
+.save-btn{
+background:#63e6be;
+border:none;
+padding:8px;
+width:100%;
+font-size:16px;
+cursor:pointer;
+}
+
+/* Student Table */
+
+.table-box{
+width:80%;
+margin:auto;
+margin-top:40px;
+}
+
+.student-table{
+width:100%;
+border-collapse:collapse;
+}
+
+.student-table th,
+.student-table td{
+border:1px solid gray;
+padding:10px;
+}
+
+.delete-btn{
+background:red;
+color:white;
+border:none;
+padding:5px 10px;
+cursor:pointer;
+}
+
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Character Counter</h1>
-        <p>200 characters max</p>
 
-        <textarea id="messageArea" maxlength="200" placeholder="Type your message here..."></textarea>
+<h1>STUDENT FORM</h1>
 
-        <p id="charCount">0/200 characters</p>
+<!-- FORM -->
 
-        <p id="warningMessage" class="warning hidden">⚠ Character limit reached! You cannot type any more.</p>
-    </div>
+<div class="form-box">
 
-    <script src="script.js"></script>
+<table>
+
+<tr>
+<td>Name</td>
+<td><input id="name"></td>
+</tr>
+
+<tr>
+<td>Age</td>
+<td><input id="age"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="gender" value="Male">Male
+<input type="radio" name="gender" value="Female">Female
+</td>
+</tr>
+
+<tr>
+<td>Course</td>
+<td>
+<select id="course">
+<option>JavaScript</option>
+<option>Python</option>
+<option>Java</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>Email</td>
+<td><input id="email"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button class="save-btn" onclick="addStudent()">Save</button>
+</td>
+</tr>
+
+</table>
+
+</div>
+
+<!-- STUDENT TABLE -->
+
+<div class="table-box">
+
+<table class="student-table" id="studentTable">
+
+<tr>
+<th>NAME</th>
+<th>AGE</th>
+<th>COURSE</th>
+<th>GENDER</th>
+<th>EMAIL</th>
+<th>ACTION</th>
+</tr>
+
+<tr>
+<td>Ravi</td>
+<td>22</td>
+<td>JavaScript</td>
+<td>Male</td>
+<td>ravi@gmail.com</td>
+<td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+</tr>
+
+<tr>
+<td>Priya</td>
+<td>21</td>
+<td>Python</td>
+<td>Female</td>
+<td>priya@gmail.com</td>
+<td><button class="delete-btn" onclick="deleteRow(this)">Delete</button></td>
+</tr>
+
+</table>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
-
 </html>
